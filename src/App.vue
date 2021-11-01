@@ -1,15 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <HelloWorld title="slot">
+      <li class="list-group-item" v-for="obj in slotobjs" v-bind:key="obj.name">
+        {{obj.name}} ({{obj.mail}})
+      </li>
+    </HelloWorld>
+  </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      slotobjs: [
+        {name:'Taro', mail:'taro@yamada'},
+        {name:'Hanako', mail:'hanako@flower'},
+        {name:'Sachiko', mail:'sachiko@happy'},
+      ],
+    }
   }
 }
 </script>
