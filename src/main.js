@@ -1,4 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import {store} from './store'
+// import { router } from './router'
 
-createApp(App).mount('#app')
+// storeの情報を読み込んでいる
+createApp(App)
+    .use(store)
+    .mount('#app')
